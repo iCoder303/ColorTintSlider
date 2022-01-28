@@ -82,22 +82,22 @@
                                         <rect key="frame" x="-2" y="0.0" width="252" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                         <connections>
-                                            <action selector="changeRedColor" destination="BYZ-38-t0r" eventType="valueChanged" id="Jph-6r-RKT"/>
+                                            <action selector="setRedColor" destination="BYZ-38-t0r" eventType="valueChanged" id="Jph-6r-RKT"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VJj-Ml-yhy">
                                         <rect key="frame" x="-2" y="50" width="252" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                         <connections>
-                                            <action selector="changeGreenColor" destination="BYZ-38-t0r" eventType="valueChanged" id="djt-cO-FDk"/>
-                                            <action selector="changeRedColor" destination="BYZ-38-t0r" eventType="valueChanged" id="jCC-mY-4rb"/>
+                                            <action selector="setGreenColor" destination="BYZ-38-t0r" eventType="valueChanged" id="djt-cO-FDk"/>
+                                            <action selector="setRedColor" destination="BYZ-38-t0r" eventType="valueChanged" id="jCC-mY-4rb"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KXr-Z9-0qj">
                                         <rect key="frame" x="-2" y="100" width="252" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                         <connections>
-                                            <action selector="changeBlueColor" destination="BYZ-38-t0r" eventType="valueChanged" id="CyI-8L-Q2O"/>
+                                            <action selector="setBlueColor" destination="BYZ-38-t0r" eventType="valueChanged" id="CyI-8L-Q2O"/>
                                         </connections>
                                     </slider>
                                 </subviews>
@@ -119,13 +119,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blueSlider" destination="KXr-Z9-0qj" id="vA0-bL-SxK"/>
-                        <outlet property="blueValue" destination="iLk-gu-pIl" id="cVM-pM-hge"/>
+                        <outlet property="blueSliderSet" destination="KXr-Z9-0qj" id="vA0-bL-SxK"/>
                         <outlet property="colorPalette" destination="alb-UC-7oi" id="1oh-Vv-bLM"/>
-                        <outlet property="greenSlider" destination="VJj-Ml-yhy" id="jX6-TJ-oGs"/>
-                        <outlet property="greenValue" destination="k5F-87-H3X" id="gLw-mv-5kD"/>
-                        <outlet property="redSlider" destination="bBU-HM-qTk" id="sbf-jH-D5W"/>
-                        <outlet property="redValue" destination="tra-3J-EgA" id="k8E-K7-iG9"/>
+                        <outlet property="greenSliderSet" destination="VJj-Ml-yhy" id="jX6-TJ-oGs"/>
+                        <outlet property="labelBlueValue" destination="iLk-gu-pIl" id="cVM-pM-hge"/>
+                        <outlet property="labelGreenValue" destination="k5F-87-H3X" id="gLw-mv-5kD"/>
+                        <outlet property="labelRedValue" destination="tra-3J-EgA" id="k8E-K7-iG9"/>
+                        <outlet property="redSliderSet" destination="bBU-HM-qTk" id="sbf-jH-D5W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

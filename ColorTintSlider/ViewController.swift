@@ -9,39 +9,42 @@ import UIKit
 
 class ViewController: UIViewController {
     
-
     @IBOutlet weak var colorPalette: UIView!
     
-    @IBOutlet weak var redValue: UILabel!
-    @IBOutlet weak var greenValue: UILabel!
-    @IBOutlet weak var blueValue: UILabel!
+    @IBOutlet weak var labelRedValue: UILabel!
+    @IBOutlet weak var labelGreenValue: UILabel!
+    @IBOutlet weak var labelBlueValue: UILabel!
     
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet weak var redSliderSet: UISlider!
+    @IBOutlet weak var greenSliderSet: UISlider!
+    @IBOutlet weak var blueSliderSet: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         colorPalette.layer.cornerRadius = 10
     }
-
     
-    @IBAction func changeRedColor() {
-        redValue.text = String(round(redSlider.value * 100) / 100)
-        
+    @IBAction func setRedColor() {
+        labelRedValue.text = String(round(redSliderSet.value * 100) / 100)
     }
     
-    @IBAction func changeGreenColor() {
-        greenValue.text = String(round(greenSlider.value * 100) / 100)
-        
+    @IBAction func setGreenColor() {
+        labelGreenValue.text = String(round(greenSliderSet.value * 100) / 100)
     }
     
+    @IBAction func setBlueColor() {
+        labelBlueValue.text = String(round(blueSliderSet.value * 100) / 100)
+    }
     
-    @IBAction func changeBlueColor() {
-        blueValue.text = String(round(blueSlider.value * 100) / 100)
-        
+    override func viewWillLayoutSubviews() {
+        colorPalette.layer.backgroundColor = CGColor(
+            red: CGFloat(redSliderSet.value),
+            green: CGFloat(greenSliderSet.value),
+            blue: CGFloat(blueSliderSet.value),
+            alpha: CGFloat(1.0)
+        )
     }
 }
+
 
 
