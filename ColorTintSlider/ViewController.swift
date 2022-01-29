@@ -25,15 +25,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func setRedColor() {
-        labelRedValue.text = String(round(redSliderSet.value * 100) / 100)
+        labelRedValue.text = String(format: "%.2f",redSliderSet.value)
     }
     
     @IBAction func setGreenColor() {
-        labelGreenValue.text = String(round(greenSliderSet.value * 100) / 100)
+        labelGreenValue.text = String(format: "%.2f", greenSliderSet.value)
     }
     
     @IBAction func setBlueColor() {
-        labelBlueValue.text = String(round(blueSliderSet.value * 100) / 100)
+        labelBlueValue.text = String(format: "%.2f", blueSliderSet.value)
     }
     
     override func viewWillLayoutSubviews() {
