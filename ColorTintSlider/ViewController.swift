@@ -11,38 +11,37 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var colorPalette: UIView!
     
-    @IBOutlet weak var labelRedValue: UILabel!
-    @IBOutlet weak var labelGreenValue: UILabel!
-    @IBOutlet weak var labelBlueValue: UILabel!
+    @IBOutlet weak var redLabel: UILabel!
+    @IBOutlet weak var greenLabel: UILabel!
+    @IBOutlet weak var blueLabel: UILabel!
     
-    @IBOutlet weak var redSliderSet: UISlider!
-    @IBOutlet weak var greenSliderSet: UISlider!
-    @IBOutlet weak var blueSliderSet: UISlider!
+    @IBOutlet weak var redSlider: UISlider!
+    @IBOutlet weak var greenSlider: UISlider!
+    @IBOutlet weak var blueSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         colorPalette.layer.cornerRadius = 10
     }
     
-    @IBAction func setRedColor() {
-        labelRedValue.text = String(format: "%.2f",redSliderSet.value)
+    @IBAction func rgbSlider() {
+        redLabel.text = string(from: redSlider)
+        greenLabel.text = string(from: greenSlider)
+        blueLabel.text = string(from: blueSlider)
     }
     
-    @IBAction func setGreenColor() {
-        labelGreenValue.text = String(format: "%.2f", greenSliderSet.value)
-    }
-    
-    @IBAction func setBlueColor() {
-        labelBlueValue.text = String(format: "%.2f", blueSliderSet.value)
-    }
-    
-    override func viewWillLayoutSubviews() {
-        colorPalette.layer.backgroundColor = CGColor(
-            red: CGFloat(redSliderSet.value),
-            green: CGFloat(greenSliderSet.value),
-            blue: CGFloat(blueSliderSet.value),
-            alpha: CGFloat(1.0)
+    override func viewWillLayoutSubviews () {
+        colorPalette.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
         )
+    }
+    
+    private func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
     }
 }
 
